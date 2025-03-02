@@ -1,4 +1,4 @@
-# Taskrix
+# 📝 Taskrix
 
 Taskrix is a real-time task management application developed for Insider Bootcamp. It offers essential features for efficient task tracking and organization.
 
@@ -28,6 +28,11 @@ Taskrix is a real-time task management application developed for Insider Bootcam
 - Add, delete, and manage tasks as needed.
 - Sort tasks by priority or due date.
 - Mark completed tasks to track progress.
+
+## Live Demo
+
+Taskrix is now live on Netlify! You can access it here:
+👉 [Taskrix on Netlify](https://taskrix.netlify.app)
 
 ## Contributing
 
