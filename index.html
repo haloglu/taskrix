@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerçek Zamanlı Görev Yönetim Uygulaması - Taskrix</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/img/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body onload="clear()">
+    <header>
+      <img
+        src="./assets/img/taskrix-logo-orange.svg"
+        alt="Taskora Logo"
+        class="taskora-logo"
+      />
+    </header>
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <h2>Görev Ekle</h2>
+        </div>
+        <div class="card-body">
+          <form id="task-form">
+            <label for="task-title"
+              >Görev Başlığı <span class="required">*</span></label
+            >
+            <input
+              type="text"
+              id="task-title"
+              name="task"
+              placeholder="Görev ekle..."
+              maxlength="70"
+              oninput="updateTitleCount()"
+            />
+            <div id="task-title-error" class="error-message"></div>
+            <div id="title-count" class="char-count">0 / 70</div>
+
+            <label for="taskMessage">Görev Açıklaması</label>
+            <textarea
+              name="message"
+              id="taskMessage"
+              placeholder="Görev Açıklaması Giriniz"
+              maxlength="280"
+              oninput="updateMessageCount()"
+            ></textarea>
+            <div id="task-message-error" class="error-message"></div>
+            <div id="message-count" class="char-count">0 / 280</div>
+
+            <label for="priority-task"
+              >Öncelik Sırası Seçiniz <span class="required">*</span></label
+            >
+            <select name="priority" id="priorityTask">
+              <option value="Seçiniz">Seçiniz</option>
+              <option value="Düşük">Düşük</option>
+              <option value="Orta">Orta</option>
+              <option value="Yüksek">Yüksek</option>
+            </select>
+            <div id="priority-error" class="error-message"></div>
+
+            <a href="javascript:void(0)" onclick="gonder()" class="add-button"
+              >Ekle</a
+            >
+          </form>
+
+          <div class="filters" id="filters">
+            <div class="filter-item" id="filter-all" onclick="filterAll()">
+              <i class="material-icons">filter_list</i>Tümü
+            </div>
+            <div
+              class="filter-item"
+              id="filter-completed"
+              onclick="filterCompleted()"
+            >
+              <i class="material-icons">check_circle</i>Tamamlananlar
+            </div>
+            <div
+              class="filter-item"
+              id="filter-priority"
+              onclick="filterPriority()"
+            >
+              <i class="material-icons">priority_high</i>Öncelik
+            </div>
+            <div class="filter-item" id="filter-date" onclick="filterDate()">
+              <i class="material-icons">calendar_today</i>Tarih
+            </div>
+          </div>
+
+          <ul id="tasks">
+            <!-- Dinamik olarak görevler eklenecek -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./assets/js/script.js"></script>
+</html>
